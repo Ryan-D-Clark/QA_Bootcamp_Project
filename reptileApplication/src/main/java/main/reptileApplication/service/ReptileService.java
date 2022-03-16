@@ -2,10 +2,12 @@ package main.reptileApplication.service;
 
 import main.reptileApplication.entity.Reptile;
 import main.reptileApplication.repo.ReptileRepo;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class ReptileService implements ServiceMethods<Reptile>{
 
     private ReptileRepo repo;
