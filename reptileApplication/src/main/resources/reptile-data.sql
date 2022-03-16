@@ -1,0 +1,1 @@
+INSERT INTO `reptile` (`age`, `gender`, `is_arboreal`, `is_insectivore`, `name`, `specie`) VALUES (2, 'Female', true, false, 'Thorette', 'Crested Gecko')
