@@ -10,4 +10,14 @@ class ReptileApplicationTest {
 	void contextLoads() {
 	}
 
+	@Test
+	public void applicationTest()
+	{
+		ReptileApplication.main(new String[]{
+
+				// Anything for that 100% coverage
+
+		});
+	}
+
 }
