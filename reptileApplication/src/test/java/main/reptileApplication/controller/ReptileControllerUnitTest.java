@@ -45,6 +45,7 @@ public class ReptileControllerUnitTest {
         Mockito.verify(this.service, Mockito.times(1)).create(reptile);
     }
 
+
     @Test
     public void readAllTest(){
         Reptile reptile = new Reptile("Charm","Chameleon",
@@ -59,6 +60,7 @@ public class ReptileControllerUnitTest {
         Mockito.verify(this.service, Mockito.times(1)).readAll();
     }
 
+
     @Test
     public void readByIdTest(){
         Reptile reptile = new Reptile(1,"Charm","Chameleon",
@@ -72,6 +74,37 @@ public class ReptileControllerUnitTest {
         Mockito.verify(this.service, Mockito.times(1)).readById(1L);
     }
 
+
+    @Test
+    public void readByNameTest(){
+        Reptile reptile = new Reptile("Charm","Chameleon",
+                3,"Male",true,true);
+        List<Reptile> reptileList = List.of(reptile);
+
+        Mockito.when(this.service.readByName(Mockito.anyString())).thenReturn(reptileList);
+
+        ResponseEntity<List<Reptile>> responseEntity = new ResponseEntity<>(reptileList, HttpStatus.OK);
+
+        assertEquals(responseEntity, this.controller.readByName("Charm"));
+        Mockito.verify(this.service, Mockito.times(1)).readByName("Charm");
+    }
+
+
+    @Test
+    public void readBySpecieTest(){
+        Reptile reptile = new Reptile("Charm","Chameleon",
+                3,"Male",true,true);
+        List<Reptile> reptileList = List.of(reptile);
+
+        Mockito.when(this.service.readBySpecie(Mockito.anyString())).thenReturn(reptileList);
+
+        ResponseEntity<List<Reptile>> responseEntity = new ResponseEntity<>(reptileList, HttpStatus.OK);
+
+        assertEquals(responseEntity, this.controller.readBySpecie("Charm"));
+        Mockito.verify(this.service, Mockito.times(1)).readBySpecie("Charm");
+    }
+
+
     @Test
     public void updateTest(){
         Reptile updatedReptile = new Reptile(1,"Charm","Chameleon",
@@ -84,6 +117,7 @@ public class ReptileControllerUnitTest {
         Mockito.verify(this.service, Mockito.times(1)).update(1L,updatedReptile);
     }
 
+
     @Test
     public void deleteTrueTest(){
         Mockito.when(this.service.delete(1L)).thenReturn(true);
@@ -93,6 +127,8 @@ public class ReptileControllerUnitTest {
         assertEquals(responseEntity, this.controller.deleteReptile(1L));
         Mockito.verify(this.service, Mockito.times(1)).delete(1L);
     }
+
+
     @Test
     public void deleteFalseTest(){
         Mockito.when(this.service.delete(1L)).thenThrow(EntityNotFoundException.class);
