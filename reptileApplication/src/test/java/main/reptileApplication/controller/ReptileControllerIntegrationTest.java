@@ -78,8 +78,39 @@ public class ReptileControllerIntegrationTest {
         ResultMatcher checkBody = content().json(existingReptileAsJSON);
 
         this.mvc.perform(requestBuilder).andExpect(checkStatus).andExpect(checkBody);
-
     }
+
+    @Test
+    public void  readByNameTest() throws Exception {
+        Reptile existingReptile = new Reptile(1,"Thorette", "Crested Gecko", 2, "Female", false, true);
+        List<Reptile> reptileList = new ArrayList<>();
+        reptileList.add(existingReptile);
+        String reptileListAsJSON = this.mapper.writeValueAsString(reptileList);
+
+        RequestBuilder requestBuilder = get("/api/readByName/Thorette");
+
+        ResultMatcher checkStatus = status().isOk();
+        ResultMatcher checkBody = content().json(reptileListAsJSON);
+
+        this.mvc.perform(requestBuilder).andExpect(checkStatus).andExpect(checkBody);
+    }
+
+    @Test
+    public void  readBySpecieTest() throws Exception {
+        Reptile existingReptile = new Reptile(1,"Thorette", "Crested Gecko", 2, "Female", false, true);
+        List<Reptile> reptileList = new ArrayList<>();
+        reptileList.add(existingReptile);
+        String reptileListAsJSON = this.mapper.writeValueAsString(reptileList);
+
+        RequestBuilder requestBuilder = get("/api/readBySpecie/Crested Gecko");
+
+        ResultMatcher checkStatus = status().isOk();
+        ResultMatcher checkBody = content().json(reptileListAsJSON);
+
+        this.mvc.perform(requestBuilder).andExpect(checkStatus).andExpect(checkBody);
+    }
+
+
 
     @Test
     public void updateTest() throws Exception {
