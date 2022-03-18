@@ -42,8 +42,17 @@ As expected, I was able to complete the core features (CRUD functionality) of th
 ## What didn't go well
 Unfortunately, after allocating too much time to testing and not enough to documentation I was falling behind on the last couple of days which means that although I covered all areas for the MVP, I did not complete all my targets. One of my main goals was to add a front-end so that the project would be easier to demonstrate, however I have decided that I will implement this later on as I don't want to have broken/unfinished components in my project.
 
-#############################INSERT IMAGES OF PROBLEMS HERE #####################
+<p align="center">
+  <img src="https://github.com/Ryan-D-Clark/QA_Bootcamp_Project/blob/dev/Documentation/Screenshots/H2%20dependency%20issue.PNG?raw=true" alt="An image of H2 console asking me to sign in with the generated password and unknown user" />
+</p>
 
+One issue I faced in my project (as shown by the image above) was that I added the wrong H2 dependency which generated a password and wanted me to sign in although I did not know the user (sa didn't work). The fix was relatively simple as I just had to make a change to the dependency but it did cause issues when I was trying to test CRUD functionality.
+
+<p align="center">
+  <img src="https://github.com/Ryan-D-Clark/QA_Bootcamp_Project/blob/dev/Documentation/Screenshots/Forgot%20to%20label%20service%20as%20a%20service.PNG?raw=true" alt="An image of my Service class showing how I didn't label it as a service" />
+</p>
+
+Another issue that I encountered was that I forgot to label my Service as '@Service' (as shown above). Although this was easy to fix I struggled with finding the actual problem as I originally thought it was an issue to do with my package structure as it was failing to import Service.
 ## Possible improvements for future versions of the project
 For future versions of the project I would like to add a front-end component that allows users to perform queries as I belive that this is more user-friendly then trying to make different requests. As well as this I want to explore custom exceptions as this was a stretch goal that I didn't manage to get to.
 
@@ -75,6 +84,10 @@ body = {
 }
 
 >  Status: 201 Created
+<p align="center">
+  <img src="https://github.com/Ryan-D-Clark/QA_Bootcamp_Project/blob/dev/Documentation/Screenshots/Postman/create%20with%20body.png?raw=true" alt="A screenshot of Postman running" />
+</p>
+
 ### ReadAll
 Records persisted on different requests.
 > Request Method: get(localhost:8080/api/readAll)
@@ -92,6 +105,9 @@ Records persisted on different requests.
 ]
 
 > Status: 200 Ok
+<p align="center">
+  <img src="https://github.com/Ryan-D-Clark/QA_Bootcamp_Project/blob/dev/Documentation/Screenshots/Postman/readAll%20after%20creating%20records.PNG?raw=true" alt="A screenshot of Postman running" />
+</p>
 
 ### ReadById
 Records persisted on different requests.
@@ -108,6 +124,10 @@ Records persisted on different requests.
 }
 
 > Status: 200 Ok
+
+<p align="center">
+  <img src="https://github.com/Ryan-D-Clark/QA_Bootcamp_Project/blob/dev/Documentation/Screenshots/Postman/readById%20on%20existing%20record.PNG?raw=true" alt="A screenshot of Postman running" />
+</p>
 
 ### Update
 Records persisted on different requests.
@@ -134,14 +154,19 @@ body = {
 
 > Status: 202 Accepted
 
+<p align="center">
+  <img src="https://github.com/Ryan-D-Clark/QA_Bootcamp_Project/blob/dev/Documentation/Screenshots/Postman/update%20on%20an%20existing%20ID.PNG?raw=true" alt="A screenshot of Postman running" />
+</p>
+
 ### Delete
 Records persisted on different requests.
 > Request Method: delete(localhost:8080/api/delete/1)
 
 > Status: 204 No-content
-### Postman Screenshots
-#############################INSERT IMAGES OF POSTMAN HERE #####################
 
+<p align="center">
+  <img src="https://github.com/Ryan-D-Clark/QA_Bootcamp_Project/blob/dev/Documentation/Screenshots/Postman/update%20on%20an%20existing%20ID.PNG?raw=true" alt="A screenshot of Postman running" />
+</p>
 
 ## H2-console
 
