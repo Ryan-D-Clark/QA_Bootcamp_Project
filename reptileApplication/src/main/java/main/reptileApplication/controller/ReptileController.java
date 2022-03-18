@@ -23,19 +23,28 @@ public class ReptileController {
 
     @PostMapping("/create")
     public ResponseEntity<Reptile> createReptile(@RequestBody Reptile reptile){
-        return new ResponseEntity<Reptile>(this.service.create(reptile), HttpStatus.CREATED);
+        return new ResponseEntity<>(this.service.create(reptile), HttpStatus.CREATED);
 
     }
 
     @GetMapping("/readAll")
     public ResponseEntity<List<Reptile>> readAll(){
-        return new ResponseEntity<List<Reptile>>(this.service.readAll(), HttpStatus.OK);
+        return new ResponseEntity<>(this.service.readAll(), HttpStatus.OK);
     }
 
     @GetMapping("/readById/{id}")
     public ResponseEntity<Reptile> readById(@PathVariable long id){
-        return new ResponseEntity<Reptile>(this.service.readById(id), HttpStatus.OK);
+        return new ResponseEntity<>(this.service.readById(id), HttpStatus.OK);
 
+    }
+    @GetMapping("/readByName/{name}")
+    public ResponseEntity<List<Reptile>> readByName(@PathVariable String name){
+        return new ResponseEntity<>(this.service.readByName(name), HttpStatus.OK);
+    }
+
+    @GetMapping("/readBySpecie/{specie}")
+    public ResponseEntity<List<Reptile>> readBySpecie(@PathVariable String specie){
+        return new ResponseEntity<>(this.service.readBySpecie(specie), HttpStatus.OK);
     }
 
     @PutMapping("/update/{id}")
@@ -47,10 +56,10 @@ public class ReptileController {
     public ResponseEntity<Boolean> deleteReptile(@PathVariable long id){
         try {
             this.service.delete(id);
-            return new ResponseEntity<Boolean>(HttpStatus.NO_CONTENT);
+            return new ResponseEntity<>(HttpStatus.NO_CONTENT);
         } catch (Exception e){
             e.printStackTrace();
-            return new ResponseEntity<Boolean>(HttpStatus.NOT_FOUND);
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
         }
     }
 

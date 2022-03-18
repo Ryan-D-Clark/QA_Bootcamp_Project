@@ -36,6 +36,20 @@ public class ReptileService implements ServiceMethods<Reptile>{
     }
 
     @Override
+    public List<Reptile> readByName(String name){
+        Optional <List<Reptile>> getReptiles = Optional.ofNullable(this.repo.findByName(name));
+            return getReptiles.get();
+
+    }
+
+    @Override
+    public List<Reptile> readBySpecie(String specie){
+        Optional <List<Reptile>> getReptiles = Optional.ofNullable(this.repo.findBySpecie(specie));
+            return getReptiles.get();
+
+    }
+
+    @Override
     public Reptile update(long id, Reptile reptile){
         Optional<Reptile> getExistingReptile = this.repo.findById(id);
         if (getExistingReptile.isPresent()){

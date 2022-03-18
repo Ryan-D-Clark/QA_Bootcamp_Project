@@ -9,6 +9,11 @@ public interface ServiceMethods<T> {
 
     T readById(long id);
 
+    List<T> readByName(String name);
+
+    List<T> readBySpecie(String specie);
+
+
     T update(long id, T t);
 
     boolean delete(long id);

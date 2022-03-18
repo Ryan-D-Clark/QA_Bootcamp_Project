@@ -65,6 +65,30 @@ public class ReptileServiceUnitTest {
     }
 
     @Test
+    public void readByNameTest(){
+        Reptile existingReptile = new Reptile("Charm","Chameleon",2,
+                "Male",true, true);
+        List<Reptile> reptileList = List.of(existingReptile);
+
+        Mockito.when(this.repo.findByName("Charm")).thenReturn(reptileList);
+
+        assertEquals(reptileList, this.service.readByName("Charm"));
+        Mockito.verify(this.repo, Mockito.times(1)).findByName("Charm");
+    }
+
+    @Test
+    public void readBySpecieTest(){
+        Reptile existingReptile = new Reptile("Charm","Chameleon",2,
+                "Male",true, true);
+        List<Reptile> reptileList = List.of(existingReptile);
+
+        Mockito.when(this.repo.findBySpecie("Charm")).thenReturn(reptileList);
+
+        assertEquals(reptileList, this.service.readBySpecie("Charm"));
+        Mockito.verify(this.repo, Mockito.times(1)).findBySpecie("Charm");
+    }
+
+    @Test
     public void updateTest(){
         Optional<Reptile> optionalExistingReptile = Optional.of(new Reptile(1,"Charm","Chameleon",2,
                 "Male",true, true));
