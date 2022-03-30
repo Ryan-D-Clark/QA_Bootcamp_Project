@@ -1,7 +1,7 @@
 # QA_Bootcamp_Project
 https://rclarks.atlassian.net/jira/software/projects/QAP/boards/6/roadmap
 
-Final Spring Boot project made at the end of the 10-week QA software development bootcamp demonstating the technologies that we have covered.
+Final Spring Boot project made at the end of the 10-week QA software development bootcamp demonstrating the technologies that we have covered.
 
 
 
