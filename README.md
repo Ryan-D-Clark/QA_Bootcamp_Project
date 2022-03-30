@@ -39,7 +39,7 @@ Setting up the project was an area concern as I had previously faced issues when
 Documentation was also another area of concern as although it had been covered throughout the bootcamp I didn't know to what extent I needed to go when creating it. My only other experience of project documentation was my A-level project which was a step-by-step guide but I didn't think that this project required that. 
 
 ## What went well
-As expected, I was able to complete the core features (CRUD functionality) of the project within the first couple of days which I had initially planned. This meant that I could spend more time on the testing components which I was still unsure about
+As expected, I was able to complete the core features (CRUD functionality) of the project within the first couple of days which I had initially planned. This meant that I could spend more time on the testing components which I was still unsure about.
 
 ## What didn't go well
 Unfortunately, after allocating too much time to testing and not enough to documentation I was falling behind on the last couple of days which means that although I covered all areas for the MVP, I did not complete all my targets. One of my main goals was to add a front-end so that the project would be easier to demonstrate, however I have decided that I will implement this later on as I don't want to have broken/unfinished components in my project.
